@@ -1,0 +1,236 @@
+
+body.light {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  
+  body.dark {
+    background-color: #121212;
+    color: #e0e0e0; 
+  }
+  
+  body.light .p-button {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  body.dark .p-button {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+  
+  body.dark .p-button:hover {
+    background-color: #3d3d3d;
+  }
+  
+  /* DataTable styles */
+  body.light .p-datatable {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  body.dark .p-datatable {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  /* DataTable header styles */
+  body.light .p-datatable .p-datatable-thead > tr > th {
+    background-color: #f4f4f4;
+  }
+  
+  body.dark .p-datatable .p-datatable-thead > tr > th {
+    background-color: #252525; 
+    color: #e0e0e0;
+    border-color: #333;
+  }
+  
+  /* DataTable row styles */
+  body.light .p-datatable .p-datatable-tbody > tr {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  body.dark .p-datatable .p-datatable-tbody > tr {
+    background-color: #252525;
+    color: #e0e0e0;
+  }
+  
+  /* DataTable row hover styles */
+  body.light .p-datatable .p-datatable-tbody > tr:hover {
+    background-color: #f4f4f4;
+  }
+  
+  body.dark .p-datatable .p-datatable-tbody > tr:hover {
+    background-color: #333; 
+  }
+  
+  /* DataTable row stripes (nếu có) */
+  body.dark .p-datatable .p-datatable-tbody > tr:nth-child(even) {
+    background-color: #282828;
+  }
+  
+  /* Row selected style */
+  body.dark .p-datatable .p-datatable-tbody > tr.p-highlight {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+  
+  /* Tag styles */
+  body.light .p-tag-success {
+    background-color: #28a745;
+  }
+  
+  body.dark .p-tag-success {
+    background-color: #2e7d32; 
+  }
+  
+  body.light .p-tag-danger {
+    background-color: #dc3545;
+  }
+  
+  body.dark .p-tag-danger {
+    background-color: #c62828; 
+  }
+  
+  /* Paginator styles */
+  body.light .p-paginator {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  
+  body.dark .p-paginator {
+    background-color: #252525;
+    color: #e0e0e0;
+    border-color: #333;
+  }
+  
+  body.dark .p-paginator .p-paginator-page,
+  body.dark .p-paginator .p-paginator-next,
+  body.dark .p-paginator .p-paginator-prev,
+  body.dark .p-paginator .p-paginator-first,
+  body.dark .p-paginator .p-paginator-last {
+    color: #e0e0e0;
+    background-color: #252525;
+    border-color: #333;
+  }
+  
+  body.dark .p-paginator .p-paginator-page:hover,
+  body.dark .p-paginator .p-paginator-next:hover,
+  body.dark .p-paginator .p-paginator-prev:hover,
+  body.dark .p-paginator .p-paginator-first:hover,
+  body.dark .p-paginator .p-paginator-last:hover {
+    background-color: #333;
+  }
+  
+  body.dark .p-paginator .p-paginator-page.p-highlight {
+    background-color: #3a3a3a;
+  }
+  
+  /* Dropdown styles */
+  body.dark .p-dropdown {
+    background-color: #252525;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+  
+  body.dark .p-dropdown .p-dropdown-label {
+    color: #e0e0e0;
+  }
+  
+  body.dark .p-dropdown-panel {
+    background-color: #252525;
+    border-color: #333;
+  }
+  
+  body.dark .p-dropdown-items .p-dropdown-item {
+    color: #e0e0e0;
+    background-color: #252525;
+  }
+  
+  body.dark .p-dropdown-items .p-dropdown-item:hover {
+    background-color: #333;
+    color: #ffffff;
+  }
+  
+  body.dark .p-dropdown-items .p-dropdown-item.p-highlight {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+  
+  /* Input fields */
+  body.dark .p-inputtext {
+    background-color: #252525;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+  
+  /* Dialog/modal */
+  body.dark .p-dialog {
+    background-color: #252525;
+    color: #e0e0e0;
+    border-color: #333;
+  }
+  
+  /* Menu/context menu */
+  body.dark .p-menu {
+    background-color: #252525;
+    border-color: #333;
+    color: #e0e0e0;
+  }
+  
+  body.dark .p-menuitem:hover {
+    background-color: #333;
+  }
+
+  /* Light mode - Checkbox trong DataTable */
+body.light .p-checkbox-box {
+  border: 2px solid #555;
+  width: 20px;
+  height: 20px;
+}
+
+/* Dark mode - Checkbox trong DataTable */
+body.dark .p-checkbox-box {
+  background-color: #1e1e1e;
+  border: 2px solid #888;
+  width: 20px;
+  height: 20px;
+}
+
+body.dark .p-checkbox-box.p-highlight {
+  background-color: #3a3a3a;
+  border-color: #ffffff;
+}
+
+body.light .p-checkbox-box.p-highlight {
+  background-color: #007ad9;
+  border-color: #007ad9;
+}
+
+/* Tăng kích thước icon checkmark */
+.p-checkbox-icon {
+  font-size: 14px;
+}
+
+body.dark .p-dialog {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark .p-dialog .p-dialog-header {
+  background: #252525;
+  border-bottom: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark .p-dialog .p-dialog-content {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark .p-dialog .p-dialog-footer {
+  background: #252525;
+  border-top: 1px solid #333;
+}
