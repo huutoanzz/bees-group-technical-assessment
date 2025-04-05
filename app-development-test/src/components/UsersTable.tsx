@@ -177,19 +177,29 @@ const UserTable = () => {
   const handleBulkDelete = async () => {
     if (!selectedUsers.length) return;
   
-    // Hiển thị dialog xác nhận
     confirmDialog({
-      message: `Are you sure you want to delete ${selectedUsers.length} selected user(s)?`,
-      header: 'Delete Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      acceptClassName: 'p-button-danger',
+      message: (
+        <div className="flex align-items-center">
+          <i 
+            className="pi pi-exclamation-triangle mr-3" 
+            style={{ fontSize: '2rem', color: 'var(--yellow-500)' }} 
+          />
+          <div>
+            <p className="font-medium mb-2">
+              Are you sure you want to delete <span className="text-primary font-semibold">{selectedUsers.length}</span> selected user(s)?
+            </p>
+            <p className="text-sm text-color-secondary">
+              This action cannot be undone. All associated data will be permanently removed.
+            </p>
+          </div>
+        </div>
+      ),
+      header: 'Confirm Deletion',
       accept: async () => {
         try {
-          // Thực hiện xóa
           const deletePromises = selectedUsers.map(user => 
             axios.delete(`${API_URL}/${user.id}`)
           );
-          
           await Promise.all(deletePromises);
           
           toast.current?.show({
@@ -201,8 +211,7 @@ const UserTable = () => {
           
           setSelectedUsers([]);
           queryClient.invalidateQueries({ queryKey: ['users'] });
-        } catch (error) {
-          console.error('Error deleting users:', error);
+        } catch {
           toast.current?.show({
             severity: 'error',
             summary: 'Error',
@@ -212,17 +221,42 @@ const UserTable = () => {
         }
       },
       reject: () => {
-        // Người dùng hủy bỏ
         toast.current?.show({
           severity: 'info',
           summary: 'Cancelled',
           detail: 'Deletion was cancelled',
           life: 2000
         });
-      }
+      },
+      acceptLabel: 'Delete',
+      rejectLabel: 'Cancel',
+      acceptClassName: 'p-button-danger',
+      rejectClassName: 'p-button-text',
+      acceptIcon: 'pi pi-trash',
+      rejectIcon: 'pi pi-times',
+      className: 'custom-confirm-dialog',
+      style: { width: '30vw', minWidth: '350px' },
+      breakpoints: { '960px': '75vw', '640px': '75vw' },
+      footer: (options) => (
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
+          <Button 
+            label={options.rejectLabel} 
+            icon={options.rejectIcon} 
+            onClick={options.reject} 
+            className={options.rejectClassName} 
+          />
+          <Button 
+            label={options.acceptLabel} 
+            icon={options.acceptIcon} 
+            onClick={options.accept} 
+            autoFocus 
+            severity="danger"
+          />
+        </div>
+      )
     });
   };
-
+  
   if (isLoading) {
     return (
       <div className="flex flex-column justify-center items-center" style={{ height: '50vh' }}>

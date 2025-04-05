@@ -71,7 +71,7 @@ async function processWithDelay(
 (async () => {
     try {
         console.log("Test case 1: Normal array");
-        await processWithDelay([1, 2, 3, 4, 5] , 500);
+        await processWithDelay([1, 2, 3, 4, 5] , 1000);
     } catch (error) {
         if (error instanceof ProcessCustomError) {
             console.error("Caught error:", error.message);
