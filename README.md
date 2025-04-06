@@ -2,47 +2,40 @@
 
 **Technical Assessment for Front-End Developer Role**
 
----
+## 🚀 Project Setup Guide
 
-## 🚀 Hướng dẫn chạy dự án
+This project includes two main folders: `logic-test` and `app-development-test`. Follow the instructions below to install and run each part.
 
-Dự án này bao gồm hai thư mục chính: `logic-test` và `app-development-test`. Dưới đây là hướng dẫn chi tiết để bạn có thể cài đặt và chạy từng phần.
+## 🛠 Requirements
 
----
+- Node.js installed on your machine
+- npm (Node package manager)
+- Visual Studio Code (recommended for managing the project)
 
-## 🛠 Yêu cầu
-- **Node.js**: Đảm bảo bạn đã cài đặt Node.js trên máy, bao gồm công cụ quản lý package `npm`.
-- **Visual Studio Code**: Sử dụng Visual Studio Code để mở và quản lý dự án.
+## 📝 Instructions
 
----
+### 1️⃣ Clone the Repository
 
-## 📝 Hướng dẫn
-### 1️⃣ Clone dự án
-Trước tiên, bạn cần clone dự án từ repository. 
- git clone https://github.com/huutoanzz/bees-group-technical-assessment
-Di chuyển vào thư mục dự án và mở bằng Visual Studio Code.
-  
----
+Clone the repository and open it with Visual Studio Code.
 
-### 2️⃣ Hướng dẫn chạy từng thư mục
+### 2️⃣ How to Run Each Folder
 
-#### 📂 Đối với `logic-test`
-1. Chuyển đến thư mục `logic-test`.  
-   `cd logic-test`
-2. Cài đặt các phụ thuộc.  
-   `npm install`
-3. Chạy file `processWithDelay.ts`.  
-   `npx ts-node processWithDelay.ts`
+#### 📂 `logic-test`
 
----
+1. Navigate to the `logic-test` folder
+   cd logic-test
+2. Install dependencies
+   npm install 
+3. Run the file `processWithDelay.ts`
+   npx ts-node processWithDelay.ts
 
-#### 📂 Đối với `app-development-test`
-1. Chuyển đến thư mục `app-development-test`.  
-   `cd app-development-test`
-2. Cài đặt các phụ thuộc.  
-   `npm install`
-3. Chạy ứng dụng.  
-   `npm run dev`
----
+#### 📂 `app-development-test`
 
-## 🎉 Chúc bạn triển khai thành công!
+1. Navigate to the `app-development-test` folder
+  cd app-development-test
+2. Install dependencie
+   npm install  
+3. Start the application  
+   npm run dev
+   
+## 🎉 Good luck with the implementation!
