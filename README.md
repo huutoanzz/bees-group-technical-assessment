@@ -22,20 +22,20 @@ Clone the repository and open it with Visual Studio Code.
 
 #### 📂 `logic-test`
 
-1. Navigate to the `logic-test` folder
-   `cd logic-test`
-2. Install dependencies
-   `npm install `
-3. Run the file `processWithDelay.ts`
-   `npx ts-node processWithDelay.ts`
+1. Navigate to the `logic-test` folder <br>
+   `cd logic-test` <br>
+2. Install dependencies<br>
+   `npm install ` <br>
+3. Run the file `processWithDelay.ts` <br>
+   `npx ts-node processWithDelay.ts` <br>
 
 #### 📂 `app-development-test`
 
-1. Navigate to the `app-development-test` folder
-  `cd app-development-test`
-2. Install dependencie
-   `npm install`
-3. Start the application  
-   `npm run dev`
+1. Navigate to the `app-development-test` folder <br>
+  `cd app-development-test` <br>
+2. Install dependencie <br>
+   `npm install` <br>
+3. Start the application <br>
+   `npm run dev` <br>
    
 ## 🎉 Good luck with the implementation!
