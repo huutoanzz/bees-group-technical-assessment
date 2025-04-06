@@ -234,3 +234,33 @@ body.dark .p-dialog .p-dialog-footer {
   background: #252525;
   border-top: 1px solid #333;
 }
+body.dark .p-calendar {
+  background: #252525;
+  border-color: #444;
+}
+
+body.dark .p-calendar .p-inputtext {
+  background: #252525;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark .p-datepicker {
+  background: #252525;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark .p-datepicker-header {
+  background: #1e1e1e;
+  border-bottom-color: #444;
+}
+
+body.dark .p-datepicker-calendar td > span:not(.p-disabled):not(.p-highlight) {
+  color: #e0e0e0;
+}
+
+body.dark .p-datepicker-calendar td > span.p-highlight {
+  background: #3a3a3a;
+  color: #fff;
+}

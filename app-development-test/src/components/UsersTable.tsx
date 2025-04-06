@@ -150,7 +150,7 @@ const UserTable = () => {
   const handleDeleteUser = async () => {
     try {
       if (currentUser && currentUser.id) {
-        await axios.delete(`https://66359043415f4e1a5e24d37c.mockapi.io/users/${currentUser.id}`);
+        await axios.delete(`${API_URL}/${currentUser.id}`);
         console.log('User deleted:', currentUser);
         setDeleteDialogVisible(false);
         
@@ -220,14 +220,6 @@ const UserTable = () => {
           });
         }
       },
-      reject: () => {
-        toast.current?.show({
-          severity: 'info',
-          summary: 'Cancelled',
-          detail: 'Deletion was cancelled',
-          life: 2000
-        });
-      },
       acceptLabel: 'Delete',
       rejectLabel: 'Cancel',
       acceptClassName: 'p-button-danger',
@@ -259,17 +251,17 @@ const UserTable = () => {
   
   if (isLoading) {
     return (
-      <div className="flex flex-column justify-center items-center" style={{ height: '50vh' }}>
+      <div className="flex flex-col items-center justify-center h-[50vh]">
         <ProgressSpinner
           strokeWidth="4"
           animationDuration=".5s"
           style={{ width: '50px', height: '50px' }}
         />
-        <span className="mt-3 text-lg">Loading users data...</span>
+        <span className="mt-3 text-lg text-center">Loading users data...</span>
       </div>
     );
   }
-
+  
   if (isError) {
     return (
       <div className="flex justify-center items-center" style={{ height: '50vh' }}>
@@ -304,7 +296,7 @@ const UserTable = () => {
                 label={`Delete (${selectedUsers.length})`}
                 icon="pi pi-trash"
                 onClick={handleBulkDelete}
-                className="p-button-danger p-button-rounded p-button-outlined"
+                className="p-button-rounded p-button-outlined p-2 w-full md:w-auto"
                 severity="danger"
               />
             )}
@@ -318,7 +310,7 @@ const UserTable = () => {
             label={`${isDarkMode ? 'Light Mode' : 'Dark Mode'}`}
             icon={`pi pi-${isDarkMode ? 'sun' : 'moon'}`}
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-button-rounded p-button-outlined"
+            className="p-button-rounded p-button-outlined p-2 w-full md:w-auto"
           />
         </div>
       </div>
@@ -368,12 +360,16 @@ const UserTable = () => {
         <Column
           field="registerAt"
           header="Registration"
-          sortable
-          filter
           body={(row) => (
-            <span data-pr-tooltip={new Date(row.registerAt).toLocaleString()}>
-              {formatDate(row.registerAt)}
-            </span>
+            <>
+              <Tooltip target={`#date-tooltip-${row.id}`} />
+              <span 
+                id={`date-tooltip-${row.id}`}
+                data-pr-tooltip={new Date(row.registerAt).toLocaleString()}
+              >
+                {formatDate(row.registerAt)}
+              </span>
+            </>
           )}
         />
         <Column
@@ -427,7 +423,6 @@ const UserTable = () => {
           style={{ width: '160px', textAlign: 'center' }}
         />
       </DataTable>
-      <Tooltip target="span[data-pr-tooltip]" />
 
       <EditDialog
         visible={editDialogVisible}
