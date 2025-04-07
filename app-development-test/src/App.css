@@ -264,3 +264,54 @@ body.dark .p-datepicker-calendar td > span.p-highlight {
   background: #3a3a3a;
   color: #fff;
 }
+
+
+body.dark .p-column-filter-menu {
+  color: #e0e0e0;
+}
+
+body.dark .p-column-filter-menu:hover {
+  color: #64b5f6;
+}
+
+body.dark .p-column-filter-overlay {
+  background: #252525;
+  border: 1px solid #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark .p-column-filter-overlay .p-column-filter-constraint {
+  border-bottom: 1px solid #444;
+}
+
+body.dark .p-column-filter-overlay .p-column-filter-add-rule,
+body.dark .p-column-filter-overlay .p-column-filter-remove-rule {
+  color: #64b5f6;
+}
+
+
+body.dark .p-column-filter-overlay .p-dropdown-item {
+  color: #e0e0e0;
+}
+
+body.dark .p-column-filter-overlay .p-dropdown-item:hover {
+  background: #333;
+}
+
+body.dark .p-column-filter-overlay .p-calendar {
+  background: #252525;
+}
+
+/* Filter operator buttons */
+body.dark .p-column-filter-overlay .p-column-filter-operator {
+  background: #333;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark .p-column-filter-overlay .p-column-filter-operator:hover {
+  background: #3a3a3a;
+}
+
+
+

@@ -16,6 +16,7 @@ import DeleteDialog from './DeleteDialog';
 import { Toast } from 'primereact/toast';
 import { useRef } from 'react';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import { Calendar } from 'primereact/calendar';
 
 const API_URL = 'https://66359043415f4e1a5e24d37c.mockapi.io/users';
 
@@ -360,6 +361,10 @@ const UserTable = () => {
         <Column
           field="registerAt"
           header="Registration"
+          sortable
+          filter
+          filterField="registerAt"
+          dataType="date"
           body={(row) => (
             <>
               <Tooltip target={`#date-tooltip-${row.id}`} />
@@ -371,6 +376,26 @@ const UserTable = () => {
               </span>
             </>
           )}
+          filterElement={(options) => (
+            <div className="p-inputgroup">
+              <Calendar
+                value={options.value}
+                onChange={(e) => options.filterCallback(e.value, options.index)}
+                dateFormat="yy-mm-dd"
+                placeholder="Filter by date"
+                showIcon
+                className="p-column-filter"
+              />
+              <Button
+                type="button"
+                icon="pi pi-times"
+                className="p-button-outlined"
+                onClick={() => options.filterCallback(null, options.index)}
+                tooltip="Clear filter"
+              />
+            </div>
+          )}
+          filterMatchMode="dateIs"
         />
         <Column
           field="active"
